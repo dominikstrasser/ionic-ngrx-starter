@@ -1,5 +1,5 @@
 {
-  "name": "ionic-hello-world",
+  "name": "ionic-ngrx-starter",
   "author": "Ionic Framework",
   "homepage": "http://ionicframework.com/",
   "private": true,
@@ -53,5 +53,5 @@
       "locator": "ios"
     }
   ],
-  "description": "ionic-firebase-starter: An Ionic project"
+  "description": "ionic-ngrx-starter"
 }
