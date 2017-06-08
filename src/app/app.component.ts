@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
-import { StatusBar, Splashscreen } from 'ionic-native';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { Page1 } from '../pages/page1/page1';
 import { Page2 } from '../pages/page2/page2';
@@ -21,7 +22,9 @@ export class MyApp {
 
   constructor(
     public platform: Platform,
-    public store: Store<ApplicationState>
+    public store: Store<ApplicationState>,
+    private splashScreen: SplashScreen,
+    private statusBar: StatusBar
   ) {
     this.initializeApp();
 
@@ -34,15 +37,18 @@ export class MyApp {
 
   }
 
+
   initMockUser() {
     const user = UserModel.create({ name: 'Happy Person', email: 'happy@person.at', id: '123' });
     this.store.dispatch(new InitUserAction(user));
   }
 
+
+
   initializeApp() {
     this.platform.ready().then(() => {
-      StatusBar.styleDefault();
-      Splashscreen.hide();
+      this.statusBar.styleDefault();
+      this.splashScreen.hide();
     });
   }
 
